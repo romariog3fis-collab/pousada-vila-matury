@@ -46,6 +46,12 @@
    - Criado `_headers` para proteção de segurança HTTP (XSS, Clickjacking, MIME-sniffing) e cache para Core Web Vitals.
    - Atualizado `index.html` com tags `robots` (`max-image-preview:large`) e link direto para o `sitemap.xml`.
 
+6. **Lojinha & Boutique da Vila (Atendimento Direto ao Áudio da Proprietária):**
+   - Implementada seção exclusiva `#lojinha` com produtos autorais (Camisetas em algodão orgânico, Bonés bordados e Eco Bags de praia).
+   - Botões de pedido direto via WhatsApp integrados com textos parametrizados por produto.
+   - Link nos menus de navegação (desktop e gaveta mobile) e no rodapé.
+   - Adicionadas imagens geradas em alta resolução e cadastradas no `sitemap.xml`.
+
 ---
 
 ## 📲 3. Mensagem de WhatsApp Pronta para os Donos

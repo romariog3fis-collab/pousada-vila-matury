@@ -16,6 +16,16 @@
       <image:title>Jardim e Acomodações da Pousada Vila Matury</image:title>
       <image:caption>Aconchego e tranquilidade à beira-mar na Praia da Redonda</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/boutique_camisetas_vila.jpg</image:loc>
+      <image:title>Camisetas Oficiais da Boutique Vila Matury</image:title>
+      <image:caption>Camisetas em algodão orgânico da Pousada Vila Matury</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/boutique_bones_vila.jpg</image:loc>
+      <image:title>Bonés Autoriais da Boutique Vila Matury</image:title>
+      <image:caption>Boné de praia exclusivo da Pousada Vila Matury na Praia da Redonda</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://vilamatury.com.br/</loc>
@@ -31,6 +41,16 @@
       <image:loc>https://vilamatury.com.br/assets/images/vila_matury_1.jpg</image:loc>
       <image:title>Jardim e Acomodações da Pousada Vila Matury</image:title>
       <image:caption>Aconchego e tranquilidade à beira-mar na Praia da Redonda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vilamatury.com.br/assets/images/boutique_camisetas_vila.jpg</image:loc>
+      <image:title>Camisetas Oficiais da Boutique Vila Matury</image:title>
+      <image:caption>Camisetas em algodão orgânico da Pousada Vila Matury</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vilamatury.com.br/assets/images/boutique_bones_vila.jpg</image:loc>
+      <image:title>Bonés Autoriais da Boutique Vila Matury</image:title>
+      <image:caption>Boné de praia exclusivo da Pousada Vila Matury na Praia da Redonda</image:caption>
     </image:image>
   </url>
 </urlset>

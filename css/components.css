@@ -1504,6 +1504,197 @@
   gap: 1rem;
 }
 
+/* ==========================================
+   BOUTIQUE & LOJINHA DA VILA
+   ========================================== */
+.boutique-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.boutique-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boutique-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.boutique-img-wrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.boutique-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.boutique-card:hover .boutique-img {
+  transform: scale(1.05);
+}
+
+.boutique-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: var(--terracotta-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boutique-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.boutique-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.boutique-cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage-dark, #4A6B53);
+}
+
+.boutique-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--terracotta-primary);
+}
+
+.boutique-title {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  color: var(--wood-dark);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.boutique-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.boutique-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.boutique-sizes {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.btn-boutique-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--terracotta-primary);
+  color: #FFFFFF !important;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-boutique-order:hover {
+  background-color: var(--terracotta-dark);
+  transform: translateY(-1px);
+}
+
+.boutique-banner-note {
+  margin-top: 3rem;
+  background: var(--terracotta-soft);
+  border: 1px solid rgba(217, 122, 79, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.boutique-note-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.boutique-banner-note strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--wood-dark);
+  margin-bottom: 0.25rem;
+}
+
+.boutique-banner-note p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .boutique-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .boutique-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .boutique-banner-note {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  .boutique-footer {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
 /* RESPONSIVIDADE ESPECÍFICA */
 @media (max-width: 1024px) {
   .booking-form-grid {
