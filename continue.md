@@ -40,6 +40,12 @@
    - Repositório Git inicializado e sincronizado no GitHub (`romariog3fis-collab/pousada-vila-matury`).
    - GitHub Pages ativado e funcionando.
 
+5. **Configuração de SEO Profissional e Segurança:**
+   - Criado `robots.txt` para rastreamento otimizado pelo Google.
+   - Criado `sitemap.xml` com suporte à indexação de imagens no Google Imagens (suítes, falésias e praia).
+   - Criado `_headers` para proteção de segurança HTTP (XSS, Clickjacking, MIME-sniffing) e cache para Core Web Vitals.
+   - Atualizado `index.html` com tags `robots` (`max-image-preview:large`) e link direto para o `sitemap.xml`.
+
 ---
 
 ## 📲 3. Mensagem de WhatsApp Pronta para os Donos
