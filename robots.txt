@@ -1,0 +1,15 @@
+# Robots.txt — Pousada Vila Matury (Praia da Redonda, Icapuí - CE)
+# Permite a indexação completa pelos motores de busca (Google, Bing, etc.)
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+# Bloqueia scripts internos de manutenção
+Disallow: /scripts/
+
+# Sitemaps Oficiais
+Sitemap: https://pousada-vilamatury.netlify.app/sitemap.xml
+Sitemap: https://vilamatury.com.br/sitemap.xml
