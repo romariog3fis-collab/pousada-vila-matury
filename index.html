@@ -319,6 +319,19 @@
             </a>
           </div>
         </div>
+
+        <!-- Vídeo Institucional Vila Matury (Oficial) -->
+        <div class="video-showcase-wrapper">
+          <div class="video-card-container" id="videoShowcase" onclick="playVilaVideo()">
+            <img src="assets/images/video_poster_vila.webp" alt="Vídeo Oficial da Pousada Vila Matury - Praia da Redonda" class="video-poster-img" id="videoPoster" loading="lazy" />
+            <div class="video-play-overlay" id="videoOverlay">
+              <div class="btn-play-circle" aria-label="Assistir ao vídeo da pousada">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="video-play-text">Assista ao Vídeo Oficial da Pousada Vila Matury</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -383,87 +396,112 @@
     </section>
 
     <!-- ==========================================
-         8. BOUTIQUE & LOJINHA DA VILA
+         8. BOUTIQUE & LOJINHA DA VILA (de usar)
          ========================================== -->
     <section class="section-padding" id="lojinha">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag tag-terracotta">Exclusividade & Memória</span>
+          <span class="section-tag tag-terracotta">Vila Matury (de usar)</span>
           <h2 class="section-title">Lojinha & Boutique da Vila</h2>
           <p class="section-subtitle">
-            Leve um pedaço da paz e da essência da Redonda com você. Produtos exclusivos desenvolvidos com carinho, materiais naturais e a identidade única da Vila Matury.
+            <em>"Pousada Vila Matury estendida: para ver, usar e provar a Vila onde quer que você esteja."</em><br />
+            Peças exclusivas e afetivas criadas para celebrar as falésias, a brisa e as memórias da Praia da Redonda.
           </p>
         </div>
 
         <div class="boutique-grid">
-          <!-- Produto 1: Camiseta -->
+          <!-- Produto 1: Camiseta A Lagosta é Nossa -->
           <div class="boutique-card">
             <div class="boutique-img-wrapper">
-              <img src="assets/images/boutique_camisetas_vila.jpg" alt="Camiseta Vila Matury - Praia da Redonda" class="boutique-img" loading="lazy" />
-              <span class="boutique-badge">Coleção Raízes</span>
+              <img src="assets/images/produtos_camiseta_lagosta.webp" alt="Camiseta A Lagosta é Nossa - Vila Matury" class="boutique-img" loading="lazy" />
+              <span class="boutique-badge">História Real • 1963</span>
             </div>
             <div class="boutique-info">
               <div class="boutique-meta">
-                <span class="boutique-cat">Vestuário Autoral</span>
-                <span class="boutique-price">R$ 89,00</span>
+                <span class="boutique-cat">100% Algodão Nobre</span>
+                <span class="boutique-price">R$ 72,00</span>
               </div>
-              <h3 class="boutique-title">Camiseta Vila Matury - Algodão Orgânico</h3>
+              <h3 class="boutique-title">Camiseta "A Lagosta é Nossa"</h3>
               <p class="boutique-desc">
-                Confeccionada em algodão nobre premium com toque macio e arejado. Estampa minimalista em tons terracota inspirada na brisa e nas falésias da Redonda.
+                Peça off-white em malha premium. A estampa exclusiva reproduz uma arte feita à mão em 1963 celebrando o fim da famosa "Guerra da Lagosta" entre o Brasil e a França em defesa das águas cearenses.
               </p>
               <div class="boutique-footer">
-                <span class="boutique-sizes">Tamanhos: P • M • G • GG</span>
-                <a href="https://wa.me/5588981914175?text=Ol%C3%A1!%20Adorei%20a%20Camiseta%20da%20Vila%20Matury%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20tamanhos%20e%20pedidos!" target="_blank" class="btn-boutique-order">
-                  Pedir no WhatsApp
-                </a>
+                <span class="boutique-sizes">Tamanhos: P • M • G</span>
+                <div class="boutique-action-group">
+                  <a href="https://wa.me/5588981914175?text=Ol%C3%A1!%20Adorei%20a%20Camiseta%20'A%20Lagosta%20%C3%A9%20Nossa'%20no%20site%20e%20gostaria%20de%20pedir!" target="_blank" class="btn-boutique-order">
+                    Pedir no WhatsApp
+                  </a>
+                  <a href="https://www.vilamatury.com.br/produtos/camiseta-a-lagosta-e-nossa/" target="_blank" class="btn-boutique-store" title="Comprar na loja online com cálculo de frete">
+                    Loja Online ↗
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Produto 2: Boné -->
+          <!-- Produto 2: Camiseta Cajucultura -->
           <div class="boutique-card">
             <div class="boutique-img-wrapper">
-              <img src="assets/images/boutique_bones_vila.jpg" alt="Boné Vila Matury - Bordado Artesanal" class="boutique-img" loading="lazy" />
-              <span class="boutique-badge">Mais Pedido</span>
+              <img src="assets/images/produtos_camiseta_cajucultura.webp" alt="Camiseta Cajucultura - Vila Matury" class="boutique-img" loading="lazy" />
+              <span class="boutique-badge">14% OFF</span>
             </div>
             <div class="boutique-info">
               <div class="boutique-meta">
-                <span class="boutique-cat">Acessórios de Praia</span>
-                <span class="boutique-price">R$ 79,00</span>
+                <span class="boutique-cat">Coleção Identidade</span>
+                <div style="display: flex; align-items: baseline; gap: 0.4rem;">
+                  <span style="font-size: 0.85rem; text-decoration: line-through; color: var(--text-muted);">R$ 70,00</span>
+                  <span class="boutique-price">R$ 60,00</span>
+                </div>
               </div>
-              <h3 class="boutique-title">Boné Vila Matury - Bordado Artesanal</h3>
+              <h3 class="boutique-title">Camiseta Cajucultura</h3>
+              <div class="boutique-cause-badge">
+                <span>🌱 Apoia o Projeto Quem Ama Cuida</span>
+              </div>
               <p class="boutique-desc">
-                Tecido sarja leve em tom terracota litorâneo com bordado frontal discreto e elegante. Regulagem em metal com ajuste ergonômico para dias de sol.
+                Camiseta off-white em puro algodão homenageando os cajueiros e a tradição dos povos de Icapuí. Parte do valor de cada peça é revertida para ações socioambientais locais.
               </p>
               <div class="boutique-footer">
-                <span class="boutique-sizes">Ajustável • Unissex</span>
-                <a href="https://wa.me/5588981914175?text=Ol%C3%A1!%20Vi%20o%20Bon%C3%A9%20da%20Vila%20Matury%20no%20site%20e%20gostaria%20de%20garantir%20o%20meu!" target="_blank" class="btn-boutique-order">
-                  Pedir no WhatsApp
-                </a>
+                <span class="boutique-sizes">Modelagem Clássica</span>
+                <div class="boutique-action-group">
+                  <a href="https://wa.me/5588981914175?text=Ol%C3%A1!%20Gostaria%20de%20adquirir%20a%20Camiseta%20Cajucultura%20da%20Vila%20Matury!" target="_blank" class="btn-boutique-order">
+                    Pedir no WhatsApp
+                  </a>
+                  <a href="https://www.vilamatury.com.br/produtos/camiseta-cajucultura/" target="_blank" class="btn-boutique-store" title="Comprar na loja online com cálculo de frete">
+                    Loja Online ↗
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Produto 3: Eco Bag -->
+          <!-- Produto 3: Bolsão Palha de Carnaúba -->
           <div class="boutique-card">
             <div class="boutique-img-wrapper">
-              <img src="assets/images/boutique_ecobag_vila.jpg" alt="Eco Bag Praia Vila Matury" class="boutique-img" loading="lazy" />
-              <span class="boutique-badge">Edição Limitada</span>
+              <img src="assets/images/produtos_bolsao_carnauba.webp" alt="Bolsão Palha de Carnaúba - Vila Matury" class="boutique-img" loading="lazy" />
+              <span class="boutique-badge">Artesanal • Palha Pura</span>
             </div>
             <div class="boutique-info">
               <div class="boutique-meta">
-                <span class="boutique-cat">Bolsas & Praia</span>
-                <span class="boutique-price">R$ 65,00</span>
+                <span class="boutique-cat">Artesanato Cearense</span>
+                <span class="boutique-price">R$ 120,00</span>
               </div>
-              <h3 class="boutique-title">Eco Bag Lona & Couro - Vila Matury</h3>
+              <h3 class="boutique-title">Bolsão Palha de Carnaúba</h3>
+              <div class="boutique-cause-badge" style="background: #FFF3E0; color: #B26A00;">
+                <span>🌾 Fibra Natural do Ceará</span>
+              </div>
               <p class="boutique-desc">
-                Bolsa de praia em lona ecológica resistente com alças duplas em couro legítimo. Ampla, estilosa e perfeita para caminhar pelas praias de Icapuí.
+                Modelagem especial ampla e tamanho único. Produzido manualmente por artesãos do litoral leste cearense com palha de carnaúba sustentável. O clássico indispensável para a praia.
               </p>
               <div class="boutique-footer">
-                <span class="boutique-sizes">100% Ecológica</span>
-                <a href="https://wa.me/5588981914175?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Eco%20Bag%20da%20Lojinha%20da%20Vila!" target="_blank" class="btn-boutique-order">
-                  Pedir no WhatsApp
-                </a>
+                <span class="boutique-sizes">Tamanho Único Espaçoso</span>
+                <div class="boutique-action-group">
+                  <a href="https://wa.me/5588981914175?text=Ol%C3%A1!%20Gostaria%20de%20encomendar%20o%20Bols%C3%A3o%20em%20Palha%20de%20Carna%C3%BAba%20da%20Vila!" target="_blank" class="btn-boutique-order">
+                    Pedir no WhatsApp
+                  </a>
+                  <a href="https://www.vilamatury.com.br/produtos/bolsao-palha-de-carnauba/" target="_blank" class="btn-boutique-store" title="Comprar na loja online com cálculo de frete">
+                    Loja Online ↗
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -472,8 +510,8 @@
         <div class="boutique-banner-note">
           <div class="boutique-note-icon">🛍️</div>
           <div>
-            <strong>Visite também a nossa Lojinha Física na Recepção da Pousada:</strong>
-            <p>Todos os itens estão disponíveis a pronta-entrega para os hóspedes durante a estadia ou para envio sob encomenda.</p>
+            <strong>Lojinha Física na Recepção & Loja Online Oficial:</strong>
+            <p>Você pode adquirir os itens presencialmente na recepção da Vila Matury durante seus dias de descanso ou comprar online com entrega para todo o Brasil pela nossa loja em <a href="https://www.vilamatury.com.br/produtos/" target="_blank" style="color: var(--terracotta-dark); font-weight: 700; text-decoration: underline;">vilamatury.com.br/produtos</a>.</p>
           </div>
         </div>
       </div>
@@ -776,6 +814,103 @@
   </a>
 
   <!-- ==========================================
+       15. MENU LATERAL ESCONDIDO (SIDEBAR NAV)
+       Abre ao arrastar o mouse na borda direita,
+       ao passar o cursor sobre a aba ou ao clicar.
+       ========================================== -->
+  <!-- Aba Gatilho Flutuante -->
+  <div class="side-drawer-tab" id="sideDrawerTab" title="Arraste ou passe o mouse para navegar">
+    <div class="tab-icon">
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </div>
+    <span class="tab-text">Navegação</span>
+  </div>
+
+  <!-- Overlay Escuro -->
+  <div class="side-drawer-overlay" id="sideDrawerOverlay"></div>
+
+  <!-- Gaveta Lateral -->
+  <aside class="side-drawer" id="sideDrawer" aria-label="Navegação Rápida Lateral">
+    <div class="side-drawer-header">
+      <div class="side-drawer-brand">
+        <span class="side-drawer-brand-name">Vila Matury</span>
+        <span class="side-drawer-brand-tag">Praia da Redonda • Icapuí</span>
+      </div>
+      <button class="side-drawer-close" id="sideDrawerClose" aria-label="Fechar Menu">✕</button>
+    </div>
+
+    <div class="side-drawer-content">
+      <span class="side-drawer-subtitle">Saltar para Seção</span>
+      <nav>
+        <ul class="side-drawer-nav">
+          <li>
+            <a href="#experiencia" class="side-drawer-link">
+              <span class="side-drawer-num">01</span>
+              <span>A Pousada & Essência</span>
+            </a>
+          </li>
+          <li>
+            <a href="#acomodacoes" class="side-drawer-link">
+              <span class="side-drawer-num">02</span>
+              <span>Nossas Acomodações</span>
+            </a>
+          </li>
+          <li>
+            <a href="#lojinha" class="side-drawer-link">
+              <span class="side-drawer-num">03</span>
+              <span>Boutique da Vila (de usar)</span>
+            </a>
+          </li>
+          <li>
+            <a href="#cardapio" class="side-drawer-link">
+              <span class="side-drawer-num">04</span>
+              <span>Cardápio & Bar da Praia</span>
+            </a>
+          </li>
+          <li>
+            <a href="#guia-icapui" class="side-drawer-link">
+              <span class="side-drawer-num">05</span>
+              <span>Guia de Icapuí & Falésias</span>
+            </a>
+          </li>
+          <li>
+            <a href="#depoimentos" class="side-drawer-link">
+              <span class="side-drawer-num">06</span>
+              <span>Avaliações de Hóspedes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#localizacao" class="side-drawer-link">
+              <span class="side-drawer-num">07</span>
+              <span>Como Chegar na Redonda</span>
+            </a>
+          </li>
+          <li>
+            <a href="#faq" class="side-drawer-link">
+              <span class="side-drawer-num">08</span>
+              <span>Dúvidas Frequentes</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="side-drawer-footer">
+      <a href="#booking-section" class="btn-drawer-cta">
+        <span>Simular Diárias / Reservar</span>
+      </a>
+      <a href="https://wa.me/5588981914175" target="_blank" class="btn-drawer-sub">
+        <span>💬 Falar no WhatsApp Oficial</span>
+      </a>
+      <a href="https://www.vilamatury.com.br/produtos/" target="_blank" class="btn-drawer-sub">
+        <span>🛍️ Loja Online Nuvemshop</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================
        SCRIPTS JAVASCRIPT MODULARES
        ========================================== -->
   <script src="js/config.js"></script>
@@ -786,7 +921,16 @@
   <script src="js/features/room-showcase.js"></script>
   <script src="js/features/local-guide.js"></script>
   <script src="js/features/digital-menu.js"></script>
+  <script src="js/features/sidebar-nav.js"></script>
   <script src="js/app.js"></script>
+
+  <script>
+    function playVilaVideo() {
+      const container = document.getElementById('videoShowcase');
+      if (!container) return;
+      container.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/3mgxQbcncF4?autoplay=1&rel=0" title="Pousada Vila Matury Oficial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:var(--radius-lg);"></iframe>';
+    }
+  </script>
 
 </body>
 </html>

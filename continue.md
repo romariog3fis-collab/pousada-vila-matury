@@ -48,10 +48,22 @@ A proprietária respondeu calorosamente ao primeiro contato e compartilhou infor
 3. **Segurança HTTP & Performance:**
    - **`_headers` (Netlify):** Proteção contra Clickjacking (`X-Frame-Options: SAMEORIGIN`), MIME Sniffing (`X-Content-Type-Options: nosniff`), XSS e políticas de cache agressivo para Core Web Vitals.
 
-4. **Refinamento Visual:**
-   - Ícones semânticos em SVG nos cards de quartos (cama real, ar-condicionado, frigobar).
-   - Termo "rústico" substituído por vocabulário de charme e aconchego.
-   - Fotos reais diurna e noturna da pousada com selo 4.8 ⭐.
+5. **Menu Lateral Escondido (Sidebar Nav com Gestos & Arraste):**
+   - Aba flutuante translúcida (*glassmorphism*) na lateral direita com indicador vertical `NAVEGAÇÃO`.
+   - Abertura inteligente ao arrastar o mouse para a esquerda, aproximar o cursor da borda lateral direita (18px) ou clicar na aba.
+   - Navegação rápida numerada (`01` a `08`) com detecção automática da seção visível (*scroll spy*).
+   - Botões de ação rápida: cotação/reservas, WhatsApp oficial e link direto para a loja online Nuvemshop.
+   - Fechamento automático ao afastar o mouse, ao clicar em links, no overlay ou via tecla `ESC`.
+
+6. **Vídeo Institucional Oficial da Vila Matury:**
+   - Adicionado showcase de vídeo na seção *"A Nossa Essência"* com thumbnail em alta definição e reprodução suave do vídeo oficial do YouTube (`3mgxQbcncF4`).
+
+7. **Boutique Oficial "Vila Matury (de usar)":**
+   - Substituição dos protótipos conceituais pelos **produtos autorais reais** da loja oficial da pousada:
+     - **Camiseta "A Lagosta é Nossa":** Celebrando a história da Guerra da Lagosta de 1963 na Praia da Redonda (R$ 72,00).
+     - **Camiseta "Cajucultura":** Com selo de apoio socioambiental ao **Projeto Quem Ama Cuida** em Icapuí (R$ 60,00).
+     - **Bolsão Palha de Carnaúba:** Artesanato sustentável cearense feito à mão (R$ 120,00).
+   - Botões duplos de conversão: *"Pedir no WhatsApp"* (ideal para hóspedes na pousada) e *"Loja Online ↗"* (para quem quer calcular frete e parcelar na Nuvemshop oficial).
 
 ---
 
@@ -75,10 +87,17 @@ Oi, [Nome dela], que bom te ouvir! Fiquei super feliz com a sua resposta.
 
 Você tocou no ponto mais importante: evitar overbooking e respeitar o seu Channel Manager é prioridade total! Inclusive, sobre a sua dúvida: é 100% possível e super simples integrar o site ao seu Channel Manager! A maioria dos sistemas (seja Hospedin, Cloudbeds, HQbeds, etc.) já fornece um link ou widget de reservas oficial deles. A gente simplesmente conecta esse botão no site e, no segundo em que o hóspede reserva, ele já dá baixa automática na Booking, na Decolar e no seu painel, com risco zero de duplicidade!
 
-E achei genial a ideia da Lojinha da Vila! Tanto que aproveitei um tempinho e já deixei desenhada uma vitrine da lojinha no site com fotos conceituais das camisetas, dos bonés e das bolsas, com botão para o cliente pedir direto no WhatsApp de vocês. Dá uma olhada como ficou:
+E dei uma olhada na loja de vocês (Vila Matury de usar) e achei fantástica a história da camiseta da Lagosta de 1963 e o apoio ao Projeto Quem Ama Cuida na camiseta Cajucultura!
+
+Aproveitei um tempinho hoje e integrei tudo isso no site:
+🌿 Coloquei as fotos reais da Camiseta da Lagosta, da Cajucultura e do Bolsão de Carnaúba, com opção do cliente pedir no WhatsApp ou ir direto pra loja online de vocês!
+🎬 Adicionei o vídeo oficial da pousada com player de alta resolução.
+✨ E criei um menu lateral elegante e rápido que abre ao arrastar o mouse na borda direita.
+
+Dá uma olhada como ficou:
 👉 https://pousada-vilamatury.netlify.app#lojinha
 
-E sobre o site: como o projeto já está pronto, bonito e rodando perfeitamente, faço questão de deixar ele no ar funcionando para a Vila Matury sem custo nenhum de desenvolvimento. Para mim é um orgulho enorme ter a pousada de vocês no meu portfólio!
+E sobre o site: como o projeto já está pronto, lindo e rodando perfeitamente, faço questão de deixar ele no ar funcionando para a Vila Matury sem custo nenhum de desenvolvimento. Para mim é um orgulho enorme ter a pousada de vocês no meu portfólio!
 
 Se você quiser, me fala qual Channel Manager você usa que eu já deixo a automação pronta para vocês, e posso te ajudar a organizar o que faltar pra colocar no ar de forma oficial!
 ```

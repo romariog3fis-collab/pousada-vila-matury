@@ -17,14 +17,24 @@
       <image:caption>Aconchego e tranquilidade à beira-mar na Praia da Redonda</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/boutique_camisetas_vila.jpg</image:loc>
-      <image:title>Camisetas Oficiais da Boutique Vila Matury</image:title>
-      <image:caption>Camisetas em algodão orgânico da Pousada Vila Matury</image:caption>
+      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/video_poster_vila.webp</image:loc>
+      <image:title>Vídeo Oficial da Pousada Vila Matury</image:title>
+      <image:caption>Conheça a essência da Pousada Vila Matury na Praia da Redonda</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/boutique_bones_vila.jpg</image:loc>
-      <image:title>Bonés Autoriais da Boutique Vila Matury</image:title>
-      <image:caption>Boné de praia exclusivo da Pousada Vila Matury na Praia da Redonda</image:caption>
+      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/produtos_camiseta_lagosta.webp</image:loc>
+      <image:title>Camiseta A Lagosta é Nossa - Vila Matury (de usar)</image:title>
+      <image:caption>Camiseta comemorativa da Guerra da Lagosta de 1963</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/produtos_camiseta_cajucultura.webp</image:loc>
+      <image:title>Camiseta Cajucultura - Vila Matury</image:title>
+      <image:caption>Camiseta 100% algodão em apoio ao Projeto Quem Ama Cuida</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pousada-vilamatury.netlify.app/assets/images/produtos_bolsao_carnauba.webp</image:loc>
+      <image:title>Bolsão Palha de Carnaúba - Vila Matury</image:title>
+      <image:caption>Artesanato sustentável com palha de carnaúba do Ceará</image:caption>
     </image:image>
   </url>
   <url>
@@ -43,14 +53,24 @@
       <image:caption>Aconchego e tranquilidade à beira-mar na Praia da Redonda</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://vilamatury.com.br/assets/images/boutique_camisetas_vila.jpg</image:loc>
-      <image:title>Camisetas Oficiais da Boutique Vila Matury</image:title>
-      <image:caption>Camisetas em algodão orgânico da Pousada Vila Matury</image:caption>
+      <image:loc>https://vilamatury.com.br/assets/images/video_poster_vila.webp</image:loc>
+      <image:title>Vídeo Oficial da Pousada Vila Matury</image:title>
+      <image:caption>Conheça a essência da Pousada Vila Matury na Praia da Redonda</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://vilamatury.com.br/assets/images/boutique_bones_vila.jpg</image:loc>
-      <image:title>Bonés Autoriais da Boutique Vila Matury</image:title>
-      <image:caption>Boné de praia exclusivo da Pousada Vila Matury na Praia da Redonda</image:caption>
+      <image:loc>https://vilamatury.com.br/assets/images/produtos_camiseta_lagosta.webp</image:loc>
+      <image:title>Camiseta A Lagosta é Nossa - Vila Matury (de usar)</image:title>
+      <image:caption>Camiseta comemorativa da Guerra da Lagosta de 1963</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vilamatury.com.br/assets/images/produtos_camiseta_cajucultura.webp</image:loc>
+      <image:title>Camiseta Cajucultura - Vila Matury</image:title>
+      <image:caption>Camiseta 100% algodão em apoio ao Projeto Quem Ama Cuida</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vilamatury.com.br/assets/images/produtos_bolsao_carnauba.webp</image:loc>
+      <image:title>Bolsão Palha de Carnaúba - Vila Matury</image:title>
+      <image:caption>Artesanato sustentável com palha de carnaúba do Ceará</image:caption>
     </image:image>
   </url>
 </urlset>
