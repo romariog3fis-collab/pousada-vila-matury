@@ -1,7 +1,8 @@
 /**
  * Sidebar Navigation (Menu Lateral Escondido)
  * Pousada Vila Matury
- * Permite navegação ultrarrápida abrindo ao passar o mouse, arrastar ou clicar na aba lateral.
+ * Permite navegação ultrarrápida abrindo ao passar o mouse, arrastar, clicar na aba lateral
+ * ou clicar no botão "Menu" no topo do Navbar.
  */
 class SidebarNav {
   constructor() {
@@ -9,6 +10,7 @@ class SidebarNav {
     this.pullTab = document.getElementById('sideDrawerTab');
     this.overlay = document.getElementById('sideDrawerOverlay');
     this.closeBtn = document.getElementById('sideDrawerClose');
+    this.navTriggerBtn = document.getElementById('openSideDrawerBtn');
     this.links = document.querySelectorAll('.side-drawer-link');
     
     this.isOpen = false;
@@ -24,9 +26,19 @@ class SidebarNav {
   }
 
   initEvents() {
-    // 1. Abrir ao clicar na aba
+    // 1. Botão "Menu" na Navbar Superior
+    if (this.navTriggerBtn) {
+      this.navTriggerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.toggle();
+      });
+    }
+
+    // 2. Abrir ao clicar ou passar o mouse na aba flutuante
     if (this.pullTab) {
       this.pullTab.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         this.toggle();
       });
@@ -37,22 +49,28 @@ class SidebarNav {
       });
     }
 
-    // 2. Fechar com o botão X ou Overlay
+    // 3. Fechar com o botão X ou Overlay
     if (this.closeBtn) {
-      this.closeBtn.addEventListener('click', () => this.close());
+      this.closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.close();
+      });
     }
 
     if (this.overlay) {
-      this.overlay.addEventListener('click', () => this.close());
+      this.overlay.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.close();
+      });
     }
 
-    // 3. Mouse Leave com tolerância para evitar fechamentos acidentais
+    // 4. Mouse Leave com tolerância para evitar fechamentos acidentais ao navegar
     this.drawer.addEventListener('mouseleave', () => {
       this.leaveTimeout = setTimeout(() => {
         if (!this.isDragging) {
           this.close();
         }
-      }, 450);
+      }, 500);
     });
 
     this.drawer.addEventListener('mouseenter', () => {
@@ -62,20 +80,20 @@ class SidebarNav {
       }
     });
 
-    // 4. Detecção de proximidade da borda direita da tela (arrastar / hover na margem)
+    // 5. Detecção de aproximação da borda direita da tela (hover/arrastar próximo à margem)
     window.addEventListener('mousemove', (e) => {
       const screenWidth = window.innerWidth;
-      // Se o cursor estiver nos últimos 18px da borda direita e o drawer estiver fechado
-      if (screenWidth - e.clientX <= 18 && !this.isOpen) {
+      // Se o cursor estiver nos últimos 42px da borda direita e o drawer estiver fechado
+      if (screenWidth - e.clientX <= 42 && !this.isOpen) {
         this.open();
       }
     });
 
-    // 5. Gesto de Arraste com o Mouse (Drag to Open / Close)
+    // 6. Gesto de Arraste com o Mouse (Drag to Open / Close)
     window.addEventListener('mousedown', (e) => {
       const screenWidth = window.innerWidth;
-      // Inicia arraste se clicar na aba ou nos últimos 40px da direita
-      if (e.target.closest('#sideDrawerTab') || (screenWidth - e.clientX <= 40 && !this.isOpen)) {
+      // Inicia arraste se clicar na aba ou nos últimos 60px da direita
+      if (e.target.closest('#sideDrawerTab') || (screenWidth - e.clientX <= 60 && !this.isOpen)) {
         this.isDragging = true;
         this.startX = e.clientX;
       }
@@ -86,8 +104,8 @@ class SidebarNav {
       this.currentX = e.clientX;
       const deltaX = this.startX - this.currentX;
 
-      // Se arrastou mais de 35px para a esquerda, abre
-      if (deltaX > 35 && !this.isOpen) {
+      // Se arrastou mais de 25px para a esquerda, abre
+      if (deltaX > 25 && !this.isOpen) {
         this.open();
         this.isDragging = false;
       }
@@ -97,7 +115,7 @@ class SidebarNav {
       this.isDragging = false;
     });
 
-    // 6. Suporte a Gestos Touch (Mobile / Tablets)
+    // 7. Suporte a Gestos Touch (Mobile / Tablets)
     let touchStartX = 0;
     window.addEventListener('touchstart', (e) => {
       touchStartX = e.touches[0].clientX;
@@ -109,26 +127,29 @@ class SidebarNav {
       const deltaX = touchStartX - touchEndX;
 
       // Deslize da borda direita para esquerda abre
-      if (screenWidth - touchStartX < 50 && deltaX > 45 && !this.isOpen) {
+      if (screenWidth - touchStartX < 60 && deltaX > 40 && !this.isOpen) {
         this.open();
       }
       // Deslize da esquerda para a direita fecha quando aberto
-      if (this.isOpen && deltaX < -50) {
+      if (this.isOpen && deltaX < -45) {
         this.close();
       }
     }, { passive: true });
 
-    // 7. Fechar ao clicar em qualquer link interno
+    // 8. Fechar ao clicar em qualquer link interno após scroll
     this.links.forEach((link) => {
       link.addEventListener('click', () => {
         setTimeout(() => this.close(), 180);
       });
     });
 
-    // 8. Tecla ESC fecha
+    // 9. Teclas de Atalho: ESC fecha, 'M' abre/fecha (quando fora de inputs)
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isOpen) {
         this.close();
+      }
+      if ((e.key === 'm' || e.key === 'M') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+        this.toggle();
       }
     });
   }
@@ -147,14 +168,14 @@ class SidebarNav {
       this.leaveTimeout = null;
     }
     this.isOpen = true;
-    this.drawer.classList.add('active');
+    if (this.drawer) this.drawer.classList.add('active');
     if (this.overlay) this.overlay.classList.add('active');
     if (this.pullTab) this.pullTab.classList.add('hidden');
   }
 
   close() {
     this.isOpen = false;
-    this.drawer.classList.remove('active');
+    if (this.drawer) this.drawer.classList.remove('active');
     if (this.overlay) this.overlay.classList.remove('active');
     if (this.pullTab) this.pullTab.classList.remove('hidden');
   }
@@ -165,7 +186,7 @@ class SidebarNav {
 
     window.addEventListener('scroll', () => {
       let currentSectionId = '';
-      const scrollPos = window.scrollY + 200;
+      const scrollPos = window.scrollY + 220;
 
       sections.forEach((section) => {
         const top = section.offsetTop;
@@ -187,8 +208,30 @@ class SidebarNav {
   }
 }
 
+// Global toggle helper para funcionamento garantido e chamadas inline
+window.toggleSideDrawer = function() {
+  if (window.sidebarNavInstance) {
+    window.sidebarNavInstance.toggle();
+  } else {
+    const drawer = document.getElementById('sideDrawer');
+    const overlay = document.getElementById('sideDrawerOverlay');
+    const pullTab = document.getElementById('sideDrawerTab');
+    if (drawer) drawer.classList.toggle('active');
+    if (overlay) overlay.classList.toggle('active');
+    if (pullTab) pullTab.classList.toggle('hidden');
+  }
+};
+
 window.SidebarNav = SidebarNav;
 
-document.addEventListener('DOMContentLoaded', () => {
-  window.sidebarNavInstance = new SidebarNav();
-});
+function initSidebarNavInstance() {
+  if (!window.sidebarNavInstance) {
+    window.sidebarNavInstance = new SidebarNav();
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSidebarNavInstance);
+} else {
+  initSidebarNavInstance();
+}

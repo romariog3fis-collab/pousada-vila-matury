@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.roomShowcase = new window.RoomShowcase();
   window.localGuide = new window.LocalGuide();
   window.digitalMenu = new window.DigitalMenu();
+  if (window.SidebarNav && !window.sidebarNavInstance) {
+    window.sidebarNavInstance = new window.SidebarNav();
+  }
 
   // Configuração de dados dinâmicos do VILA_CONFIG
   setupDynamicConfig();

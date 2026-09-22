@@ -129,6 +129,12 @@
 
       <div class="navbar-cta-group">
         <a href="#booking-section" class="btn-nav-reserve">Reservar</a>
+        <button class="btn-nav-sidebar" id="openSideDrawerBtn" onclick="window.toggleSideDrawer()" aria-label="Menu Lateral de Navegação" title="Abrir Menu de Navegação">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <span>Menu</span>
+        </button>
         <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Abrir Menu">
           <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -167,9 +173,23 @@
 
   <main>
     <!-- ==========================================
-         2. HERO SECTION IMERSIVA
+         2. HERO SECTION IMERSIVA COM VÍDEO EM LOOP
          ========================================== -->
     <section class="hero-section" id="inicio">
+      <!-- Vídeo de Fundo Imersivo (Sem Controles e Sem Barra do YouTube) -->
+      <div class="hero-video-wrapper" aria-hidden="true">
+        <div class="hero-video-scaler">
+          <iframe 
+            id="heroBgVideo" 
+            src="https://www.youtube-nocookie.com/embed/3mgxQbcncF4?enablejsapi=1&autoplay=1&mute=1&controls=0&loop=1&playlist=3mgxQbcncF4&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1"
+            title="Vídeo Pousada Vila Matury Oficial"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            tabindex="-1">
+          </iframe>
+        </div>
+        <div class="hero-video-overlay"></div>
+      </div>
       <div class="hero-content">
         <div class="hero-badge">
           <span>🌿</span> Refúgio de Charme na Praia da Redonda
@@ -813,23 +833,19 @@
     </svg>
   </a>
 
-  <!-- ==========================================
-       15. MENU LATERAL ESCONDIDO (SIDEBAR NAV)
-       Abre ao arrastar o mouse na borda direita,
-       ao passar o cursor sobre a aba ou ao clicar.
-       ========================================== -->
-  <!-- Aba Gatilho Flutuante -->
-  <div class="side-drawer-tab" id="sideDrawerTab" title="Arraste ou passe o mouse para navegar">
+  <!-- Aba Gatilho Flutuante (Alta Visibilidade e Acesso Rápido) -->
+  <div class="side-drawer-tab" id="sideDrawerTab" onclick="window.toggleSideDrawer()" title="Clique ou arraste para navegar">
     <div class="tab-icon">
-      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16" />
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </div>
-    <span class="tab-text">Navegação</span>
+    <span class="tab-text">MENU</span>
+    <span class="tab-indicator">‹</span>
   </div>
 
   <!-- Overlay Escuro -->
-  <div class="side-drawer-overlay" id="sideDrawerOverlay"></div>
+  <div class="side-drawer-overlay" id="sideDrawerOverlay" onclick="window.toggleSideDrawer()"></div>
 
   <!-- Gaveta Lateral -->
   <aside class="side-drawer" id="sideDrawer" aria-label="Navegação Rápida Lateral">
@@ -838,7 +854,7 @@
         <span class="side-drawer-brand-name">Vila Matury</span>
         <span class="side-drawer-brand-tag">Praia da Redonda • Icapuí</span>
       </div>
-      <button class="side-drawer-close" id="sideDrawerClose" aria-label="Fechar Menu">✕</button>
+      <button class="side-drawer-close" id="sideDrawerClose" onclick="window.toggleSideDrawer()" aria-label="Fechar Menu">✕</button>
     </div>
 
     <div class="side-drawer-content">
@@ -922,6 +938,7 @@
   <script src="js/features/local-guide.js"></script>
   <script src="js/features/digital-menu.js"></script>
   <script src="js/features/sidebar-nav.js"></script>
+  <script src="js/features/hero-video.js"></script>
   <script src="js/app.js"></script>
 
   <script>

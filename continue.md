@@ -48,15 +48,18 @@ A proprietária respondeu calorosamente ao primeiro contato e compartilhou infor
 3. **Segurança HTTP & Performance:**
    - **`_headers` (Netlify):** Proteção contra Clickjacking (`X-Frame-Options: SAMEORIGIN`), MIME Sniffing (`X-Content-Type-Options: nosniff`), XSS e políticas de cache agressivo para Core Web Vitals.
 
-5. **Menu Lateral Escondido (Sidebar Nav com Gestos & Arraste):**
-   - Aba flutuante translúcida (*glassmorphism*) na lateral direita com indicador vertical `NAVEGAÇÃO`.
-   - Abertura inteligente ao arrastar o mouse para a esquerda, aproximar o cursor da borda lateral direita (18px) ou clicar na aba.
-   - Navegação rápida numerada (`01` a `08`) com detecção automática da seção visível (*scroll spy*).
-   - Botões de ação rápida: cotação/reservas, WhatsApp oficial e link direto para a loja online Nuvemshop.
-   - Fechamento automático ao afastar o mouse, ao clicar em links, no overlay ou via tecla `ESC`.
+5. **Menu Lateral de Navegação (Sidebar Nav & Botão na Navbar):**
+   - **Botão "≡ MENU" na Navbar Superior:** Acesso imediato no topo da página ao lado do botão "Reservar".
+   - **Aba Flutuante Terracota com Pulso Suave:** Posicionada na margem direita com gradiente terracota de alto contraste, ícone, texto `MENU` e animação de convite ao clique.
+   - **Acesso por Arraste e Proximidade:** Abre ao arrastar o mouse para a esquerda na margem direita da tela (margem ampliada para 42px para contornar a barra de rolagem do Windows), ao passar o mouse ou ao clicar.
+   - **Gaveta Lateral Completa:** Navegação rápida numerada (`01` a `08`), atalhos de cotação/reservas, WhatsApp e Loja Nuvemshop.
+   - **Atalhos de Teclado:** Tecla `M` abre/fecha e `ESC` fecha.
 
-6. **Vídeo Institucional Oficial da Vila Matury:**
-   - Adicionado showcase de vídeo na seção *"A Nossa Essência"* com thumbnail em alta definição e reprodução suave do vídeo oficial do YouTube (`3mgxQbcncF4`).
+6. **Vídeo Hero em Looping Infinito sem Barras do YouTube:**
+   - **Vídeo de Fundo Cinematográfico:** Reprodução contínua e silenciosa do vídeo oficial da Vila Matury (`3mgxQbcncF4`) no topo (Hero).
+   - **Supressão Total da Interface do YouTube:** Aplicada técnica de corte óptico com contêiner `overflow: hidden`, `pointer-events: none` e `transform: scale(1.35)`, empurrando para fora da tela a barra superior (título do vídeo, avatar, botões de compartilhar) e a barra inferior (linha vermelha de progresso, contador `0:21`, botão tela cheia e logo do YouTube).
+   - **Loop Contínuo Perpétuo:** Controlador autônomo `hero-video.js` com monitoramento da YouTube IFrame API e `postMessage` que reinicia o vídeo instantaneamente ao atingir o final, evitando qualquer pausa em `0:21`.
+   - **Overlay Escuro de Charme:** Gradiente equilibrado para garantir legibilidade impecável dos textos, títulos e motor de reservas sobre o vídeo.
 
 7. **Boutique Oficial "Vila Matury (de usar)":**
    - Substituição dos protótipos conceituais pelos **produtos autorais reais** da loja oficial da pousada:
