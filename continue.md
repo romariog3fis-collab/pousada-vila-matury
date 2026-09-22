@@ -57,7 +57,16 @@ A proprietária respondeu calorosamente ao primeiro contato e compartilhou infor
 
 6. **Vídeo Hero em Looping Infinito sem Barras do YouTube:**
    - **Vídeo de Fundo Cinematográfico:** Reprodução contínua e silenciosa do vídeo oficial da Vila Matury (`3mgxQbcncF4`) no topo (Hero).
-   - **Supressão Total da Interface do YouTube:** Aplicada técnica de corte óptico com contêiner `overflow: hidden`, `pointer-events: none` e `transform: scale(1.35)`, empurrando para fora da tela a barra superior (título do vídeo, avatar, botões de compartilhar) e a barra inferior (linha vermelha de progresso, contador `0:21`, botão tela cheia e logo do YouTube).
+   - **Supressão Total da Interface do YouTube:** Aplicada técnica de corte óptico com contêiner `overflow: hidden`, `pointer-events: none` e `transform: scale(1.22)`, empurrando para fora da tela a barra superior e os controles do YouTube.
+
+7. **Ajustes de Layout e Correção do Botão Menu Superior (22/09/2026):**
+   - **Remoção da Foto de Falésias no Hero:** A foto de fundo das falésias de Icapuí foi totalmente removida do bloco de boas-vindas.
+   - **Boas-Vindas Posicionada Abaixo do Vídeo:** A mensagem *"Paz, tranquilidade e aconchego à beira-mar"*, os botões de ação e o widget de reserva agora estão elegantemente posicionados **logo abaixo do vídeo cinematográfico**, sobre o fundo creme linho (`#FAF7F2`).
+   - **Remoção do Pôster Antigo e Triângulo Preto Gigante:** Removido o bloco redundante de vídeo em *"A Nossa Essência"* que continha o pôster *"DESCANSO não é luxo"* e o ícone SVG descalibrado que gerava um triângulo preto gigante na tela.
+   - **Correção Definitiva do Botão "≡ MENU":** 
+     - Eliminada a colisão de eventos múltiplos que abria e fechava o menu instantaneamente em 0ms.
+     - Implementado debounce de 280ms contra cliques duplos acidentais.
+     - Botão da Navbar, aba lateral flutuante, botão fechar (✕) e clique no overlay funcionam perfeitamente no desktop e mobile.
    - **Loop Contínuo Perpétuo:** Controlador autônomo `hero-video.js` com monitoramento da YouTube IFrame API e `postMessage` que reinicia o vídeo instantaneamente ao atingir o final, evitando qualquer pausa em `0:21`.
    - **Overlay Escuro de Charme:** Gradiente equilibrado para garantir legibilidade impecável dos textos, títulos e motor de reservas sobre o vídeo.
 
