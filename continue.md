@@ -52,15 +52,13 @@ O site no Netlify (`pousada-vilamatury.netlify.app`) foi publicado inicialmente 
   - Alinhamento refinado com `display: inline-flex; align-items: center; line-height: 1; gap: 1.15rem; font-size: 0.84rem; font-weight: 600;`.
   - Regra de responsividade: `@media (max-width: 1120px) { .nav-links { display: none !important; } }`. Em telas onde os 7 itens ficariam apertados, eles se recolhem perfeitamente no botão `MENU`.
 
-### Ponto 5: Fundo Sonoro Relaxante do Mar da Praia da Redonda (Novo!)
-- **Objetivo Solicitado:** Adicionar um fundo sonoro relaxante sem pesar o carregamento da página.
-- **Implementação de Alta Performance:**
-  - **Áudio Otimizado em Loop Perfeito:** Arquivo `assets/audio/ocean-waves.mp3` com som orgânico e calmo das ondas do mar e brisa costeira.
-  - **Zero Impacto no LCP/FCP (0ms):** Elemento com `preload="none"`, o arquivo não consome um único byte na carga inicial da página, sendo baixado sob demanda.
-  - **Fade-in & Fade-out Gradual:** O volume sobe suavemente de 0% a 35% em 1.6 segundos (sem sustos) e diminui suavemente ao pausar.
-  - **Widget Flutuante de Alto Luxo:** No canto inferior esquerdo (`#oceanSoundWidget`), com estética glassmorphism linho, tooltip de convite ("🌊 Toque para ouvir o mar da Redonda ✕") e equalizador com barras de ondas sonoras animadas.
-  - **Sincronizado no Menu Lateral:** Card dedicado com toggle switch dentro do `#sideDrawer` permitindo ativar/desativar com um toque tanto no celular quanto no computador.
-  - **Persistência Inteligente:** Lembra a preferência do visitante via `localStorage` e respeita a política de autoplay dos navegadores.
+### Ponto 5: Fundo Sonoro Relaxante (Atualizado com Áudio do Usuário!)
+- **Objetivo Solicitado:** Trocar a faixa de áudio pelo arquivo enviado (`WhatsApp Audio 2026-09-22 at 20.43.09.mpeg`, ~4min 12s, formato MP3 ID3v2).
+- **Implementação:**
+  - Arquivo substituído em `assets/audio/ocean-waves.mp3`.
+  - Mantido `preload="none"` (zero impacto de download no carregamento inicial da página).
+  - Fade-in e fade-out graduais continuam ativos e suaves.
+  - Widget flutuante de vidro linho e controle no menu lateral sincronizados.
 
 ### Ponto 6: Diagnóstico e Correção de Media Query Não Fechada no CSS
 - **Diagnóstico:** Uma chave de fechamento (`}`) ausente no bloco `@media (max-width: 768px)` da linha 1750 fazia com que todos os seletores subsequentes (menu lateral, botões flutuantes e regras desktop) fossem acidentalmente encapsulados dentro da regra mobile.
