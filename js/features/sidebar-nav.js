@@ -1,24 +1,17 @@
 /**
  * Sidebar Navigation (Menu Lateral de Navegação)
  * Pousada Vila Matury
- * Gerencia abertura via botão da Navbar, aba lateral flutuante,
- * gestos de arraste (drag), scroll spy e atalhos de teclado.
+ * Gerencia gestos touch, atalhos de teclado e links internos.
  */
 class SidebarNav {
   constructor() {
     this.drawer = document.getElementById('sideDrawer');
     this.pullTab = document.getElementById('sideDrawerTab');
-    this.overlay = document.getElementById('sideDrawerOverlay');
-    this.closeBtn = document.getElementById('sideDrawerClose');
-    this.navMenuBtn = document.getElementById('openSideDrawerBtn');
-    this.mobileMenuBtn = document.getElementById('mobileMenuToggle');
     this.links = document.querySelectorAll('.side-drawer-link');
     
     this.isDragging = false;
     this.startX = 0;
     this.currentX = 0;
-    this.leaveTimeout = null;
-    this.openedViaClick = false;
 
     if (!this.drawer) return;
 
@@ -30,141 +23,82 @@ class SidebarNav {
     return this.drawer && this.drawer.classList.contains('active');
   }
 
-  open(fromClick = false) {
-    if (this.leaveTimeout) {
-      clearTimeout(this.leaveTimeout);
-      this.leaveTimeout = null;
+  open() {
+    if (typeof window.openVilaMenu === 'function') {
+      window.openVilaMenu();
     }
-    if (fromClick) {
-      this.openedViaClick = true;
-    }
-    if (this.drawer) this.drawer.classList.add('active');
-    if (this.overlay) this.overlay.classList.add('active');
-    if (this.pullTab) this.pullTab.classList.add('hidden');
-    document.body.style.overflow = 'hidden';
   }
 
   close() {
-    if (this.leaveTimeout) {
-      clearTimeout(this.leaveTimeout);
-      this.leaveTimeout = null;
+    if (typeof window.closeVilaMenu === 'function') {
+      window.closeVilaMenu();
     }
-    this.openedViaClick = false;
-    if (this.drawer) this.drawer.classList.remove('active');
-    if (this.overlay) this.overlay.classList.remove('active');
-    if (this.pullTab) this.pullTab.classList.remove('hidden');
-    document.body.style.overflow = '';
   }
 
-  toggle(fromClick = true) {
-    if (this.isOpen()) {
-      this.close();
-    } else {
-      this.open(fromClick);
+  toggle() {
+    if (typeof window.toggleVilaMenu === 'function') {
+      window.toggleVilaMenu();
     }
   }
 
   initEvents() {
-    // 1. Hover na aba lateral abre suavemente para espiar
+    // 1. Aba flutuante lateral (hover para espiar no desktop)
     if (this.pullTab) {
       this.pullTab.addEventListener('mouseenter', () => {
-        this.open(false);
+        if (!this.isOpen()) {
+          this.open();
+        }
       });
     }
 
-    // 6. Mouse Leave com tolerância na gaveta (apenas se aberta por hover)
-    this.drawer.addEventListener('mouseleave', () => {
-      if (this.openedViaClick) return; // Se abriu por clique, mantém aberto até ação explícita
-      this.leaveTimeout = setTimeout(() => {
-        if (!this.isDragging && !this.openedViaClick) {
-          this.close();
-        }
-      }, 400);
+    // 2. Fechar ao clicar em qualquer link interno com scroll suave
+    this.links.forEach((link) => {
+      link.addEventListener('click', () => {
+        setTimeout(() => this.close(), 160);
+      });
     });
 
-    this.drawer.addEventListener('mouseenter', () => {
-      if (this.leaveTimeout) {
-        clearTimeout(this.leaveTimeout);
-        this.leaveTimeout = null;
+    // 3. Atalhos de teclado: ESC fecha, M abre/fecha (quando não estiver digitando)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen()) {
+        this.close();
+      }
+      if ((e.key === 'm' || e.key === 'M') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+        this.toggle();
       }
     });
 
-    // 7. Detecção de proximidade da margem direita (hover)
-    // Ignora quando cursor está no cabeçalho/navbar para nunca conflitar com botões
-    window.addEventListener('mousemove', (e) => {
-      if (e.clientY < 90 || (e.target && e.target.closest && (e.target.closest('#mainNavbar') || e.target.closest('#openSideDrawerBtn')))) {
-        return;
-      }
-      const screenWidth = window.innerWidth;
-      if (screenWidth - e.clientX <= 30 && !this.isOpen()) {
-        this.open(false);
-      }
-    });
-
-    // 8. Arraste com o Mouse (Drag to Open)
-    window.addEventListener('mousedown', (e) => {
-      if (e.clientY < 90 || (e.target && e.target.closest && (e.target.closest('#mainNavbar') || e.target.closest('#openSideDrawerBtn')))) {
-        return;
-      }
-      const screenWidth = window.innerWidth;
-      if ((e.target && e.target.closest && e.target.closest('#sideDrawerTab')) || (screenWidth - e.clientX <= 50 && !this.isOpen())) {
-        this.isDragging = true;
-        this.startX = e.clientX;
-      }
-    });
-
-    window.addEventListener('mousemove', (e) => {
-      if (!this.isDragging) return;
-      this.currentX = e.clientX;
-      const deltaX = this.startX - this.currentX;
-      if (deltaX > 25 && !this.isOpen()) {
-        this.open(true);
-        this.isDragging = false;
-      }
-    });
-
-    window.addEventListener('mouseup', () => {
-      this.isDragging = false;
-    });
-
-    // 9. Suporte a Gestos Touch (Mobile / Tablet)
+    // 4. Suporte a Gestos Touch (Mobile / Tablet)
     let touchStartX = 0;
+    let touchStartY = 0;
+
     window.addEventListener('touchstart', (e) => {
       if (e.touches && e.touches[0]) {
         touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
       }
     }, { passive: true });
 
     window.addEventListener('touchend', (e) => {
       if (!e.changedTouches || !e.changedTouches[0]) return;
       const touchEndX = e.changedTouches[0].clientX;
-      const screenWidth = window.innerWidth;
+      const touchEndY = e.changedTouches[0].clientY;
       const deltaX = touchStartX - touchEndX;
+      const deltaY = Math.abs(touchStartY - touchEndY);
 
-      if (screenWidth - touchStartX < 60 && deltaX > 40 && !this.isOpen()) {
-        this.open(true);
-      }
-      if (this.isOpen() && deltaX < -45) {
-        this.close();
+      // Deslize horizontal predominante
+      if (deltaY < 80) {
+        const screenWidth = window.innerWidth;
+        // Deslize da borda direita para a esquerda -> Abre
+        if (screenWidth - touchStartX < 50 && deltaX > 35 && !this.isOpen()) {
+          this.open();
+        }
+        // Deslize da esquerda para a direita quando aberto -> Fecha
+        if (this.isOpen() && deltaX < -40) {
+          this.close();
+        }
       }
     }, { passive: true });
-
-    // 10. Fechar ao clicar em qualquer link interno
-    this.links.forEach((link) => {
-      link.addEventListener('click', () => {
-        setTimeout(() => this.close(), 180);
-      });
-    });
-
-    // 11. Atalhos de teclado: ESC fecha, M abre/fecha
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isOpen()) {
-        this.close();
-      }
-      if ((e.key === 'm' || e.key === 'M') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
-        this.toggle(true);
-      }
-    });
   }
 
   initScrollSpy() {
@@ -195,31 +129,6 @@ class SidebarNav {
   }
 }
 
-// Global toggle sincronizado com a instância se existir
-window.toggleVilaMenu = function() {
-  if (window.sidebarNavInstance) {
-    window.sidebarNavInstance.toggle(true);
-  } else {
-    const drawer = document.getElementById('sideDrawer');
-    const overlay = document.getElementById('sideDrawerOverlay');
-    const tab = document.getElementById('sideDrawerTab');
-    if (!drawer) return;
-    const isAct = drawer.classList.contains('active');
-    if (isAct) {
-      drawer.classList.remove('active');
-      if (overlay) overlay.classList.remove('active');
-      if (tab) tab.classList.remove('hidden');
-      document.body.style.overflow = '';
-    } else {
-      drawer.classList.add('active');
-      if (overlay) overlay.classList.add('active');
-      if (tab) tab.classList.add('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-};
-
-window.toggleSideDrawer = window.toggleVilaMenu;
 window.SidebarNav = SidebarNav;
 
 function initSidebarNav() {

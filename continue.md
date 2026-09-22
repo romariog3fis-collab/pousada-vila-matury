@@ -1,124 +1,90 @@
 # Status do Projeto — Parceria Pousada Vila Matury
-**Última Atualização:** 21/09/2026  
+**Última Atualização:** 22/09/2026  
 **Objetivo:** Parceria estratégica / case de portfólio real de site e boutique digital de alta conversão para a Pousada Vila Matury (Praia da Redonda, Icapuí - CE).
 
 ---
 
-## 🌐 1. Links Ativos do Projeto
+## 🌐 1. Links do Projeto & Status de Publicação
 
-- **Link Oficial no Netlify (Produção / Demonstração):**  
-  👉 [https://pousada-vilamatury.netlify.app](https://pousada-vilamatury.netlify.app)
-- **Acesso Direto à Nova Boutique da Vila:**  
-  👉 [https://pousada-vilamatury.netlify.app#lojinha](https://pousada-vilamatury.netlify.app#lojinha)
-- **Repositório GitHub (Sincronizado):**  
-  👉 [https://github.com/romariog3fis-collab/pousada-vila-matury](https://github.com/romariog3fis-collab/pousada-vila-matury)
-- **GitHub Pages (Backup/Portfólio):**  
-  👉 [https://romariog3fis-collab.github.io/pousada-vila-matury/](https://romariog3fis-collab.github.io/pousada-vila-matury/)
+| Plataforma | Link | Status de Atualização |
+| :--- | :--- | :--- |
+| **Servidor Local** | [http://localhost:8086](http://localhost:8086) | ✅ **100% Atualizado e Validado** com todas as correções |
+| **Repositório GitHub** | [pousada-vila-matury](https://github.com/romariog3fis-collab/pousada-vila-matury) | ✅ **Sincronizado na branch `main`** |
+| **GitHub Pages** | [Link GitHub Pages](https://romariog3fis-collab.github.io/pousada-vila-matury/) | 🔄 Workflow de CI/CD automatizado via GitHub Actions |
+| **Netlify Produção** | [pousada-vilamatury.netlify.app](https://pousada-vilamatury.netlify.app) | ⚠️ **Pendente de Upload** (ver instruções no Item 2 abaixo) |
 
 ---
 
-## 🎙️ 2. Retorno da Proprietária (Áudio de WhatsApp — 21/09/2026)
+## 🚨 2. Por que o Netlify Não Atualizou e Como Atualizar na Volta
 
-A proprietária respondeu calorosamente ao primeiro contato e compartilhou informações estratégicas cruciais:
-1. **Status Atual dela:** Já estava tentando desenvolver um site próprio, mas enfrentou dificuldades e atrasos (*"se a gente tivesse se falado antes até ia ver se você me ajudava nisso"*).
-2. **Principal Medo:** **Overbooking**. Ela utiliza um **Channel Manager** para centralizar Booking, Decolar e WhatsApp. Ela não quer um motor de reservas isolado que cobre ou feche reservas sem comunicação com a agenda central.
-3. **Canal Campeão:** O **WhatsApp** continua sendo o canal onde ela fecha a grande maioria das estadias.
-4. **Grande Desejo (Oportunidade):** Foco em **branding/conceito** e em uma **Lojinha Virtual (Boutique da Vila)** para expor e vender camisetas, bonés e artigos que ela produz para a recepção física.
-5. **Receptividade:** Ficou muito satisfeita em conhecer o trabalho do Romário e aberta a soluções.
+O site no Netlify (`pousada-vilamatury.netlify.app`) foi publicado inicialmente via **Upload Manual (Netlify Drop - Arrastar e Soltar pasta)**. Por esse motivo, comandos `git push` não disparam builds no Netlify automaticamente.
 
----
+### Como atualizar o Netlify em 10 segundos:
+1. Abra o painel do site: 👉 **[https://app.netlify.com/sites/pousada-vilamatury/deploys](https://app.netlify.com/sites/pousada-vilamatury/deploys)**
+2. Role até a área inferior: **"Need to update your site? Drag and drop your site output folder here"**.
+3. No Windows Explorer, vá em `D:\Antigravity` e **arraste a pasta `Vila matury`** para dentro do box no navegador.
+4. O Netlify publicará todas as correções imediatamente!
 
-## 🛠️ 3. Implementações Realizadas no Projeto
-
-1. **Seção "Lojinha & Boutique da Vila" (#lojinha):**
-   - Criada seção com estética praiana de alto padrão alinhada ao design system da pousada.
-   - Três produtos autorais em destaque com fotos de alta fidelidade:
-     - **Camiseta Vila Matury:** 100% algodão orgânico, tons terracota e minimalismo praiano.
-     - **Boné Vila Matury:** Sarja litorânea, bordado artesanal e fecho em metal.
-     - **Eco Bag Lona & Couro:** Bolsa ampla para caminhadas na praia e falésias.
-   - Botões individuais que abrem o WhatsApp com a mensagem e nome do produto pré-configurados.
-   - Banner destacando a lojinha física na recepção da pousada.
-   - Menus desktop, gaveta mobile e rodapé atualizados com link direto.
-
-2. **SEO Profissional & Google Search:**
-   - **`robots.txt`:** Regras para os rastreadores do Google priorizarem páginas e assets públicos.
-   - **`sitemap.xml`:** Inclui metadados de fotos das acomodações, praias de Icapuí e produtos da lojinha para indexação no **Google Imagens**.
-   - **Meta Tags:** Adicionadas diretivas `max-image-preview:large` no `<head>` para exibição de cards visuais no Google Mobile e Google Discover.
-
-3. **Segurança HTTP & Performance:**
-   - **`_headers` (Netlify):** Proteção contra Clickjacking (`X-Frame-Options: SAMEORIGIN`), MIME Sniffing (`X-Content-Type-Options: nosniff`), XSS e políticas de cache agressivo para Core Web Vitals.
-
-5. **Menu Lateral de Navegação (Sidebar Nav & Botão na Navbar):**
-   - **Botão "≡ MENU" na Navbar Superior:** Acesso imediato no topo da página ao lado do botão "Reservar".
-   - **Aba Flutuante Terracota com Pulso Suave:** Posicionada na margem direita com gradiente terracota de alto contraste, ícone, texto `MENU` e animação de convite ao clique.
-   - **Acesso por Arraste e Proximidade:** Abre ao arrastar o mouse para a esquerda na margem direita da tela (margem ampliada para 42px para contornar a barra de rolagem do Windows), ao passar o mouse ou ao clicar.
-   - **Gaveta Lateral Completa:** Navegação rápida numerada (`01` a `08`), atalhos de cotação/reservas, WhatsApp e Loja Nuvemshop.
-   - **Atalhos de Teclado:** Tecla `M` abre/fecha e `ESC` fecha.
-
-6. **Vídeo Hero em Looping Infinito sem Barras do YouTube:**
-   - **Vídeo de Fundo Cinematográfico:** Reprodução contínua e silenciosa do vídeo oficial da Vila Matury (`3mgxQbcncF4`) no topo (Hero).
-   - **Supressão Total da Interface do YouTube:** Aplicada técnica de corte óptico com contêiner `overflow: hidden`, `pointer-events: none` e `transform: scale(1.22)`, empurrando para fora da tela a barra superior e os controles do YouTube.
-
-7. **Ajustes de Layout e Correção do Botão Menu Superior (22/09/2026):**
-   - **Remoção da Foto de Falésias no Hero:** A foto de fundo das falésias de Icapuí foi totalmente removida do bloco de boas-vindas.
-   - **Boas-Vindas Posicionada Abaixo do Vídeo:** A mensagem *"Paz, tranquilidade e aconchego à beira-mar"*, os botões de ação e o widget de reserva agora estão elegantemente posicionados **logo abaixo do vídeo cinematográfico**, sobre o fundo creme linho (`#FAF7F2`).
-   - **Remoção do Pôster Antigo e Triângulo Preto Gigante:** Removido o bloco redundante de vídeo em *"A Nossa Essência"* que continha o pôster *"DESCANSO não é luxo"* e o ícone SVG descalibrado que gerava um triângulo preto gigante na tela.
-   - **Correção Definitiva do Botão "≡ MENU":** 
-     - Eliminada a colisão de eventos múltiplos que abria e fechava o menu instantaneamente em 0ms.
-     - Implementado debounce de 280ms contra cliques duplos acidentais.
-     - Botão da Navbar, aba lateral flutuante, botão fechar (✕) e clique no overlay funcionam perfeitamente no desktop e mobile.
-   - **Loop Contínuo Perpétuo:** Controlador autônomo `hero-video.js` com monitoramento da YouTube IFrame API e `postMessage` que reinicia o vídeo instantaneamente ao atingir o final, evitando qualquer pausa em `0:21`.
-   - **Overlay Escuro de Charme:** Gradiente equilibrado para garantir legibilidade impecável dos textos, títulos e motor de reservas sobre o vídeo.
-
-7. **Boutique Oficial "Vila Matury (de usar)":**
-   - Substituição dos protótipos conceituais pelos **produtos autorais reais** da loja oficial da pousada:
-     - **Camiseta "A Lagosta é Nossa":** Celebrando a história da Guerra da Lagosta de 1963 na Praia da Redonda (R$ 72,00).
-     - **Camiseta "Cajucultura":** Com selo de apoio socioambiental ao **Projeto Quem Ama Cuida** em Icapuí (R$ 60,00).
-     - **Bolsão Palha de Carnaúba:** Artesanato sustentável cearense feito à mão (R$ 120,00).
-   - Botões duplos de conversão: *"Pedir no WhatsApp"* (ideal para hóspedes na pousada) e *"Loja Online ↗"* (para quem quer calcular frete e parcelar na Nuvemshop oficial).
+*(Para deixar automatizado definitivamente: no Netlify, vá em **Site configuration** -> **Build & deploy** -> **Link repository** e selecione o repositório do GitHub).*
 
 ---
 
-## 💡 4. Estratégia Comercial & Integração com Channel Manager
+## 🛠️ 3. Soluções Implementadas nesta Sessão (Resumo dos 4 Pontos)
 
-- **Decisão Estratégica do Romário:** Ceder o site em pleno funcionamento para a Pousada Vila Matury **sem custos de desenvolvimento**, utilizando-o como um **case de portfólio real e ativo** para prospectar outras pousadas no Ceará e Nordeste.
-- **Viabilidade da Automação com o Channel Manager:**
-  - **100% viável e segura.**
-  - Pousadas no Brasil usam sistemas como *Hospedin, Cloudbeds, HQbeds ou Omnibees*.
-  - Esses sistemas já fornecem um link ou script de motor de reservas oficial.
-  - A automação consiste em apontar o botão de simulação diretamente para o motor oficial do Channel Manager dela, sincronizando disponibilidade em tempo real sem qualquer risco de overbooking.
+### Ponto 1 & 2: Botão Menu e Abertura no Desktop e Mobile
+- **Diagnóstico:** Havia conflitos de eventos duplicados (listeners em múltiplos elementos somados a mouseleave antecipado e z-index desalinhado). Além disso, o usuário testava na URL do Netlify desatualizada.
+- **Solução Aplicada:**
+  - `SidebarNav` reestruturado para delegar diretamente às funções globais `window.openVilaMenu()`, `window.closeVilaMenu()` e `window.toggleVilaMenu()` com proteção de debounce (280ms).
+  - Alinhamento de z-index: `.navbar` (`z-index: 99995`), `.side-drawer-overlay` (`z-index: 99990`) e `.side-drawer` (`z-index: 999999`). O overlay nunca mais bloqueia cliques nos botões superiores.
+  - Suporte completo a toques em dispositivos móveis, arraste de margem, tecla `ESC` e tecla `M`.
 
----
+### Ponto 3: Dois Menus no Topo na Versão Mobile
+- **Diagnóstico:** Existiam simultaneamente no HTML o botão `.btn-nav-sidebar` e o botão `.mobile-menu-btn` (hambúrguer), além de duas gavetas de menu diferentes (`mobileNavDrawer` e `sideDrawer`).
+- **Solução Aplicada:**
+  - Removido o botão duplicado de hambúrguer e a gaveta mobile legada.
+  - Mantido **apenas um único botão elegante de menu** (`#openSideDrawerBtn`) tanto no desktop quanto no mobile.
+  - Mantida **uma única gaveta lateral de alto padrão** (`#sideDrawer`) com todas as 8 seções, botões de cotação WhatsApp e link Nuvemshop.
 
-## 📲 5. Mensagem Pronta de Resposta para a Proprietária
+### Ponto 4: Textos de Navegação com Letras Mal Posicionadas
+- **Diagnóstico:** Em larguras intermediárias de tela (laptops e tablets), as abas com duas palavras ("A Pousada", "Lojinha da Vila", "Cardápio & Bar", "Guia de Icapuí", "Como Chegar") quebravam em duas linhas porque faltava `white-space: nowrap;` e o espaçamento (`gap: 2rem`) era grande demais. Isso desalinhava a linha de base vertical de todo o cabeçalho.
+- **Solução Aplicada:**
+  - Inserido `white-space: nowrap;` em `.nav-link` e `.btn-nav-reserve`.
+  - Alinhamento refinado com `display: inline-flex; align-items: center; line-height: 1; gap: 1.15rem; font-size: 0.84rem; font-weight: 600;`.
+  - Regra de responsividade: `@media (max-width: 1120px) { .nav-links { display: none !important; } }`. Em telas onde os 7 itens ficariam apertados, eles se recolhem perfeitamente no botão `MENU`.
 
-**Destinatário:** WhatsApp da Vila Matury (`(88) 98191-4175`)
-
-```text
-Oi, [Nome dela], que bom te ouvir! Fiquei super feliz com a sua resposta.
-
-Você tocou no ponto mais importante: evitar overbooking e respeitar o seu Channel Manager é prioridade total! Inclusive, sobre a sua dúvida: é 100% possível e super simples integrar o site ao seu Channel Manager! A maioria dos sistemas (seja Hospedin, Cloudbeds, HQbeds, etc.) já fornece um link ou widget de reservas oficial deles. A gente simplesmente conecta esse botão no site e, no segundo em que o hóspede reserva, ele já dá baixa automática na Booking, na Decolar e no seu painel, com risco zero de duplicidade!
-
-E dei uma olhada na loja de vocês (Vila Matury de usar) e achei fantástica a história da camiseta da Lagosta de 1963 e o apoio ao Projeto Quem Ama Cuida na camiseta Cajucultura!
-
-Aproveitei um tempinho hoje e integrei tudo isso no site:
-🌿 Coloquei as fotos reais da Camiseta da Lagosta, da Cajucultura e do Bolsão de Carnaúba, com opção do cliente pedir no WhatsApp ou ir direto pra loja online de vocês!
-🎬 Adicionei o vídeo oficial da pousada com player de alta resolução.
-✨ E criei um menu lateral elegante e rápido que abre ao arrastar o mouse na borda direita.
-
-Dá uma olhada como ficou:
-👉 https://pousada-vilamatury.netlify.app#lojinha
-
-E sobre o site: como o projeto já está pronto, lindo e rodando perfeitamente, faço questão de deixar ele no ar funcionando para a Vila Matury sem custo nenhum de desenvolvimento. Para mim é um orgulho enorme ter a pousada de vocês no meu portfólio!
-
-Se você quiser, me fala qual Channel Manager você usa que eu já deixo a automação pronta para vocês, e posso te ajudar a organizar o que faltar pra colocar no ar de forma oficial!
-```
+### Layout Geral do Topo (Hero + Boas-Vindas):
+- **Vídeo no Topo:** O vídeo oficial da pousada ocupa o banner inicial (`#inicio`) em looping contínuo perpétuo e sem barras do YouTube.
+- **Boas-Vindas Abaixo do Vídeo:** O bloco *"Paz, tranquilidade e aconchego à beira-mar"* e o motor de reservas flutuante estão posicionados logo abaixo do vídeo sobre o fundo creme linho elegante (`#FAF7F2`), sem a foto antiga das falésias no fundo.
+- **Remoção de Artefatos:** O pôster antigo *"DESCANSO não é luxo"* e o ícone SVG descalibrado que gerava um triângulo preto gigante na tela foram 100% removidos.
 
 ---
 
-## 🎯 6. Próximos Passos
+## 📁 4. Arquivos Modificados & Prontos no Repositório
 
-1. **Enviar a mensagem de resposta** no WhatsApp da pousada.
-2. **Coletar o nome do Channel Manager** dela (Hospedin, Cloudbeds, etc.) para conectar o link/widget oficial de reservas.
-3. **Alinhamento de Domínio Próprio:** Quando oficializarem, registrar o domínio oficial (ex: `vilamatury.com.br` no Registro.br) e apontar o DNS no Netlify.
-4. **Cadastrar no Google Search Console e Google Meu Negócio** para posicionamento na busca local da Praia da Redonda.
+1. **`index.html`:**
+   - Remoção do botão hambúrguer mobile duplicado.
+   - Remoção da gaveta mobile redundante.
+   - Inclusão dos handlers `toggleVilaMenu(event)` com debounce no `<head>` e no botão principal.
+   - Remoção do bloco de vídeo redundante e do script `playVilaVideo()`.
+2. **`css/components.css`:**
+   - `white-space: nowrap;` e alinhamento tipográfico limpo em `.nav-link`.
+   - Remoção de estilos do `.mobile-menu-btn`.
+   - Calibração de z-index (`.navbar`: 99995, `.side-drawer-overlay`: 99990, `.side-drawer`: 999999).
+   - Breakpoint responsivo em `1120px` para recolhimento elegante da barra.
+3. **`js/features/sidebar-nav.js`:**
+   - Reescrita limpa delegando o controle de estado a funções puras do DOM.
+   - Eliminação de race conditions e timers de mouseleave indesejados.
+   - Suporte refinado a gestos touch e atalhos de teclado.
+4. **`js/app.js`:**
+   - Limpeza de referências a elementos do menu mobile antigo.
+5. **`.github/workflows/pages.yml`:**
+   - Workflow do GitHub Actions para deploy contínuo no GitHub Pages.
+
+---
+
+## 🎯 5. Roteiro para Continuar na Próxima Sessão
+
+1. **Ligar o PC e iniciar:** O código local já está pronto e testado em `d:\Antigravity\Vila matury`.
+2. **Atualizar o Netlify:** Fazer o upload da pasta `D:\Antigravity\Vila matury` em [https://app.netlify.com/sites/pousada-vilamatury/deploys](https://app.netlify.com/sites/pousada-vilamatury/deploys) (ou configurar a sincronização com o GitHub).
+3. **Testar no celular:** Acessar pelo smartphone para validar o botão único de menu e a gaveta lateral em tela cheia.
+4. **Próximo passo de negócio:** Enviar mensagem de resposta para a proprietária da pousada (modelo pronto no item 5 anterior do continue.md) para alinhar a integração com o Channel Manager.

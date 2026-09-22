@@ -45,10 +45,6 @@ function setupDynamicConfig() {
 
 function setupNavigation() {
   const navbar = document.getElementById('mainNavbar');
-  const mobileToggle = document.getElementById('mobileMenuToggle');
-  const mobileMenu = document.getElementById('mobileNavDrawer');
-  const closeMobile = document.getElementById('closeMobileMenuBtn');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
   // Efeito blur e sombra no Navbar ao rolar a página
   window.addEventListener('scroll', () => {
@@ -58,24 +54,6 @@ function setupNavigation() {
       navbar.classList.remove('scrolled');
     }
   }, { passive: true });
-
-  // Menu mobile drawer
-  if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-
-  const closeDrawer = () => {
-    if (mobileMenu) {
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  };
-
-  if (closeMobile) closeMobile.addEventListener('click', closeDrawer);
-  mobileLinks.forEach(link => link.addEventListener('click', closeDrawer));
 
   // Ancoragem suave
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
