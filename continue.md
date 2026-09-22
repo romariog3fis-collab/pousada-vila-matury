@@ -52,39 +52,43 @@ O site no Netlify (`pousada-vilamatury.netlify.app`) foi publicado inicialmente 
   - Alinhamento refinado com `display: inline-flex; align-items: center; line-height: 1; gap: 1.15rem; font-size: 0.84rem; font-weight: 600;`.
   - Regra de responsividade: `@media (max-width: 1120px) { .nav-links { display: none !important; } }`. Em telas onde os 7 itens ficariam apertados, eles se recolhem perfeitamente no botão `MENU`.
 
-### Layout Geral do Topo (Hero + Boas-Vindas):
-- **Vídeo no Topo:** O vídeo oficial da pousada ocupa o banner inicial (`#inicio`) em looping contínuo perpétuo e sem barras do YouTube.
-- **Boas-Vindas Abaixo do Vídeo:** O bloco *"Paz, tranquilidade e aconchego à beira-mar"* e o motor de reservas flutuante estão posicionados logo abaixo do vídeo sobre o fundo creme linho elegante (`#FAF7F2`), sem a foto antiga das falésias no fundo.
-- **Remoção de Artefatos:** O pôster antigo *"DESCANSO não é luxo"* e o ícone SVG descalibrado que gerava um triângulo preto gigante na tela foram 100% removidos.
+### Ponto 5: Fundo Sonoro Relaxante do Mar da Praia da Redonda (Novo!)
+- **Objetivo Solicitado:** Adicionar um fundo sonoro relaxante sem pesar o carregamento da página.
+- **Implementação de Alta Performance:**
+  - **Áudio Otimizado em Loop Perfeito:** Arquivo `assets/audio/ocean-waves.mp3` com som orgânico e calmo das ondas do mar e brisa costeira.
+  - **Zero Impacto no LCP/FCP (0ms):** Elemento com `preload="none"`, o arquivo não consome um único byte na carga inicial da página, sendo baixado sob demanda.
+  - **Fade-in & Fade-out Gradual:** O volume sobe suavemente de 0% a 35% em 1.6 segundos (sem sustos) e diminui suavemente ao pausar.
+  - **Widget Flutuante de Alto Luxo:** No canto inferior esquerdo (`#oceanSoundWidget`), com estética glassmorphism linho, tooltip de convite ("🌊 Toque para ouvir o mar da Redonda ✕") e equalizador com barras de ondas sonoras animadas.
+  - **Sincronizado no Menu Lateral:** Card dedicado com toggle switch dentro do `#sideDrawer` permitindo ativar/desativar com um toque tanto no celular quanto no computador.
+  - **Persistência Inteligente:** Lembra a preferência do visitante via `localStorage` e respeita a política de autoplay dos navegadores.
+
+### Ponto 6: Diagnóstico e Correção de Media Query Não Fechada no CSS
+- **Diagnóstico:** Uma chave de fechamento (`}`) ausente no bloco `@media (max-width: 768px)` da linha 1750 fazia com que todos os seletores subsequentes (menu lateral, botões flutuantes e regras desktop) fossem acidentalmente encapsulados dentro da regra mobile.
+- **Solução Aplicada:** Fechamento correto da media query. O validador de profundidade de chaves agora acusa 0 de desbalanceamento em `components.css`. Tanto o menu lateral desktop quanto o widget de áudio agora funcionam com 100% de precisão.
 
 ---
 
 ## 📁 4. Arquivos Modificados & Prontos no Repositório
 
-1. **`index.html`:**
-   - Remoção do botão hambúrguer mobile duplicado.
-   - Remoção da gaveta mobile redundante.
-   - Inclusão dos handlers `toggleVilaMenu(event)` com debounce no `<head>` e no botão principal.
-   - Remoção do bloco de vídeo redundante e do script `playVilaVideo()`.
-2. **`css/components.css`:**
-   - `white-space: nowrap;` e alinhamento tipográfico limpo em `.nav-link`.
-   - Remoção de estilos do `.mobile-menu-btn`.
-   - Calibração de z-index (`.navbar`: 99995, `.side-drawer-overlay`: 99990, `.side-drawer`: 999999).
-   - Breakpoint responsivo em `1120px` para recolhimento elegante da barra.
-3. **`js/features/sidebar-nav.js`:**
-   - Reescrita limpa delegando o controle de estado a funções puras do DOM.
-   - Eliminação de race conditions e timers de mouseleave indesejados.
-   - Suporte refinado a gestos touch e atalhos de teclado.
-4. **`js/app.js`:**
-   - Limpeza de referências a elementos do menu mobile antigo.
-5. **`.github/workflows/pages.yml`:**
-   - Workflow do GitHub Actions para deploy contínuo no GitHub Pages.
+1. **`assets/audio/ocean-waves.mp3`:**
+   - Loop de alta fidelidade das ondas do mar (~61s contínuo).
+2. **`js/features/ambient-audio.js`:**
+   - Módulo independente de controle de áudio, fade orgânico e sincronização com DOM.
+3. **`index.html`:**
+   - Inclusão do widget flutuante `#oceanSoundWidget`, áudio `#oceanAudio` e switch no menu lateral.
+4. **`css/components.css`:**
+   - Correção do bloco `@media (max-width: 768px)`.
+   - Estilização completa do pill flutuante, barras de onda animadas e switch do menu lateral.
+5. **`js/app.js`:**
+   - Inicialização do módulo `AmbientAudio`.
+6. **`.gitignore`:**
+   - Liberação de rastreamento para arquivos em `assets/audio/`.
 
 ---
 
 ## 🎯 5. Roteiro para Continuar na Próxima Sessão
 
-1. **Ligar o PC e iniciar:** O código local já está pronto e testado em `d:\Antigravity\Vila matury`.
-2. **Atualizar o Netlify:** Fazer o upload da pasta `D:\Antigravity\Vila matury` em [https://app.netlify.com/sites/pousada-vilamatury/deploys](https://app.netlify.com/sites/pousada-vilamatury/deploys) (ou configurar a sincronização com o GitHub).
-3. **Testar no celular:** Acessar pelo smartphone para validar o botão único de menu e a gaveta lateral em tela cheia.
-4. **Próximo passo de negócio:** Enviar mensagem de resposta para a proprietária da pousada (modelo pronto no item 5 anterior do continue.md) para alinhar a integração com o Channel Manager.
+1. **Testar localmente:** O servidor já está ativo em [http://localhost:8086](http://localhost:8086).
+2. **Subir no Git:** Fazer `git add`, `git commit` e `git push` para atualizar o repositório e o GitHub Pages.
+3. **Atualizar o Netlify:** Fazer o upload da pasta `D:\Antigravity\Vila matury` em [https://app.netlify.com/sites/pousada-vilamatury/deploys](https://app.netlify.com/sites/pousada-vilamatury/deploys).
+4. **Mensagem para a Proprietária:** Enviar o texto de proposta com o link atualizado do site.

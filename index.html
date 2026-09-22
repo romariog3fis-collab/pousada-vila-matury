@@ -831,7 +831,30 @@
   </div>
 
   <!-- ==========================================
-       14. WHATSAPP FLUTUANTE PERSISTENTE
+       14. SOM DO MAR AMBIENTE (FLUTUANTE)
+       ========================================== -->
+  <div class="ocean-sound-widget" id="oceanSoundWidget" role="region" aria-label="Som ambiente das ondas do mar">
+    <div class="ocean-sound-tooltip" id="oceanTooltip">
+      <span>🌊 Toque para ouvir o mar da Redonda</span>
+      <button class="ocean-tooltip-close" aria-label="Fechar dica">✕</button>
+    </div>
+    <button class="ocean-sound-btn" id="oceanSoundBtn" aria-label="Ativar som do mar da Praia da Redonda" title="Ouvir as ondas da Praia da Redonda" aria-pressed="false">
+      <span class="ocean-sound-waves" aria-hidden="true">
+        <span class="wave-bar bar-1"></span>
+        <span class="wave-bar bar-2"></span>
+        <span class="wave-bar bar-3"></span>
+        <span class="wave-bar bar-4"></span>
+      </span>
+      <span class="ocean-sound-label" id="oceanSoundLabel">Som do Mar</span>
+    </button>
+  </div>
+
+  <audio id="oceanAudio" preload="none" loop>
+    <source src="assets/audio/ocean-waves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ==========================================
+       15. WHATSAPP FLUTUANTE PERSISTENTE
        ========================================== -->
   <a href="https://wa.me/5588981914175" class="floating-whatsapp-btn js-whatsapp-link" aria-label="Conversar com a Pousada Vila Matury no WhatsApp">
     <div class="whatsapp-pulse"></div>
@@ -865,6 +888,20 @@
     </div>
 
     <div class="side-drawer-content">
+      <!-- Controle de Som Ambiente no Menu Lateral -->
+      <div class="side-drawer-sound-box">
+        <div class="side-drawer-sound-info">
+          <span class="side-drawer-sound-icon">🌊</span>
+          <div>
+            <strong class="side-drawer-sound-title">Som do Mar</strong>
+            <span class="side-drawer-sound-desc" id="drawerSoundStatus">Toque para ativar</span>
+          </div>
+        </div>
+        <button class="drawer-sound-toggle-btn" id="drawerSoundToggle" role="switch" aria-checked="false" aria-label="Alternar som do mar">
+          <span class="drawer-toggle-track"><span class="drawer-toggle-thumb"></span></span>
+        </button>
+      </div>
+
       <span class="side-drawer-subtitle">Saltar para Seção</span>
       <nav>
         <ul class="side-drawer-nav">
@@ -946,6 +983,7 @@
   <script src="js/features/digital-menu.js"></script>
   <script src="js/features/sidebar-nav.js"></script>
   <script src="js/features/hero-video.js"></script>
+  <script src="js/features/ambient-audio.js"></script>
   <script src="js/app.js"></script>
 
 </body>

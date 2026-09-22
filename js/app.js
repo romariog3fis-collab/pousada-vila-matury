@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.SidebarNav && !window.sidebarNavInstance) {
     window.sidebarNavInstance = new window.SidebarNav();
   }
+  if (window.AmbientAudio) {
+    window.ambientAudio = new window.AmbientAudio();
+  }
 
   // Configuração de dados dinâmicos do VILA_CONFIG
   setupDynamicConfig();

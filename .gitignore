@@ -12,3 +12,5 @@ npm-debug.log*
 tmp/
 *.mp3
 *.ogg
+!assets/audio/*.mp3
+!assets/audio/*.ogg
