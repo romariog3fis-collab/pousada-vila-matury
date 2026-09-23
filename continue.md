@@ -52,13 +52,14 @@ O site no Netlify (`pousada-vilamatury.netlify.app`) foi publicado inicialmente 
   - Alinhamento refinado com `display: inline-flex; align-items: center; line-height: 1; gap: 1.15rem; font-size: 0.84rem; font-weight: 600;`.
   - Regra de responsividade: `@media (max-width: 1120px) { .nav-links { display: none !important; } }`. Em telas onde os 7 itens ficariam apertados, eles se recolhem perfeitamente no botão `MENU`.
 
-### Ponto 5: Fundo Sonoro Relaxante (Atualizado com Áudio do Usuário!)
-- **Objetivo Solicitado:** Trocar a faixa de áudio pelo arquivo enviado (`WhatsApp Audio 2026-09-22 at 20.43.09.mpeg`, ~4min 12s, formato MP3 ID3v2).
-- **Implementação:**
-  - Arquivo substituído em `assets/audio/ocean-waves.mp3`.
-  - Mantido `preload="none"` (zero impacto de download no carregamento inicial da página).
-  - Fade-in e fade-out graduais continuam ativos e suaves.
-  - Widget flutuante de vidro linho e controle no menu lateral sincronizados.
+### Ponto 5: Fundo Sonoro Relaxante & Novo Botão Circular Flutuante (Refinado!)
+- **Objetivo Solicitado:** Substituição do botão antigo (pill + tarja preta) por um **botão circular flutuante de luxo**, espelhando simetricamente o botão redondo do WhatsApp.
+- **Novo Design:**
+  - Formato circular idêntico ao do WhatsApp (62px desktop, 52px mobile) no canto inferior esquerdo.
+  - Gradiente terracota da identidade visual (`#E06D3E` a `#C45525`) com ondas de pulso suaves (*ripple*).
+  - Ícone interno com 4 barras de equalizador em branco puro que animam suavemente quando a música está tocando.
+  - Sincronização em tempo real mantida com o toggle switch da gaveta lateral (`#sideDrawer`).
+  - Faixa de áudio fornecida pelo usuário integrada com `preload="none"` e fade-in suave.
 
 ### Ponto 6: Diagnóstico e Correção de Media Query Não Fechada no CSS
 - **Diagnóstico:** Uma chave de fechamento (`}`) ausente no bloco `@media (max-width: 768px)` da linha 1750 fazia com que todos os seletores subsequentes (menu lateral, botões flutuantes e regras desktop) fossem acidentalmente encapsulados dentro da regra mobile.
