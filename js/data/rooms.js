@@ -1,18 +1,22 @@
 /**
  * Dados das Acomodações - Pousada Vila Matury
  * Praia da Redonda, Icapuí - CE
- * Fotos 100% REAIS da Pousada Vila Matury
+ * Fotos e Vídeos 100% REAIS da Pousada Vila Matury
  */
 const VILA_ROOMS = [
   {
-    id: "suite-master-vista-mar",
-    name: "Suíte Master Vista Mar",
-    category: "Casal / Premium",
+    id: "suite-mandacaru",
+    name: "Suíte Mandacaru",
+    category: "Casal / Queridinha da Vila",
     price: 460,
     capacity: "Até 2 adultos + 1 criança",
     maxGuests: 3,
-    shortDescription: "Acorde com a brisa do oceano e o canto dos pássaros. Varanda ampla com rede artesanal e vista panorâmica para a Praia da Redonda.",
-    fullDescription: "A Suíte Master é o refúgio perfeito para quem busca desconectar da rotina e viver momentos de puro aconchego na Vila Matury. Com arquitetura acolhedora, paredes charmosas e vista privilegiada para o mar da Redonda, dispõe de cama Queen, varanda ventilada com rede e banheiro espaçoso.",
+    shortDescription: "A queridinha da Vila e filha pródiga. Acomodação charmosa e acolhedora com arquitetura rústico-chique e atmosfera única.",
+    fullDescription: "A Suíte Mandacaru é a queridinha da Pousada Vila Matury e nossa verdadeira filha pródiga! Pensada nos mínimos detalhes para acolher casais em busca de paz, ar puro e romantismo na Praia da Redonda. Conta com cama acolhedora, varanda ventilada com rede, ducha relaxante, frigobar e todo o charme praiano do litoral cearense.",
+    videoUrl: "https://www.instagram.com/reel/DaD-mxnJes1/embed",
+    instagramUrl: "https://www.instagram.com/reel/DaD-mxnJes1/",
+    hasVideo: true,
+    videoTitle: "Tour Suíte Mandacaru - A queridinha da Vila",
     images: [
       "assets/images/vila_matury_1.jpg",
       "assets/images/vila_matury_4.jpg",
@@ -20,24 +24,28 @@ const VILA_ROOMS = [
     ],
     amenities: [
       { name: "Cama Queen Size", icon: "bed" },
-      { name: "Varanda com Rede & Vista Mar", icon: "sun" },
+      { name: "Varanda com Rede & Vista Serena", icon: "sun" },
       { name: "Ar-Condicionado Split Silencioso", icon: "snowflake" },
       { name: "Frigobar Silencioso", icon: "wine" },
       { name: "Wi-Fi Fibra Óptica", icon: "wifi" },
       { name: "Banheiro Privativo & Ducha Relaxante", icon: "bath" },
       { name: "Café da Manhã Incluso", icon: "coffee" }
     ],
-    badge: "Mais Procurada"
+    badge: "Queridinha da Vila 🌵"
   },
   {
-    id: "chale-jardim-tropical",
-    name: "Chalé Jardim Tropical",
-    category: "Casal / Tranquilidade",
-    price: 390,
+    id: "suite-cajueiro",
+    name: "Suíte Cajueiro",
+    category: "Casal / Vista Mar",
+    price: 420,
     capacity: "Até 2 adultos",
     maxGuests: 2,
-    shortDescription: "Imerso na vegetação nativa e coqueirais da pousada. Silêncio absoluto, conforto térmico natural e muita privacidade.",
-    fullDescription: "Construído em harmonia com a natureza da Vila Matury, o Chalé Jardim Tropical oferece uma experiência intimista cercada de coqueiros e brisa do litoral. Conta com acabamento em madeira, rede preguiçosa e luz suave que convida ao descanso após um dia nas praias de Icapuí.",
+    shortDescription: "Para casal com vista direta pro mar, varandinha privativa, ducha quente revigorante e ar-condicionado silencioso.",
+    fullDescription: "A Suíte Cajueiro da Vila Matury foi feita sob medida para casais. Possui vista direta para o mar da Redonda, varandinha com rede preguiçosa para sentir a brisa fresca, ar-condicionado split silencioso, ducha quente revigorante e decoração acolhedora cercada de coqueirais.",
+    videoUrl: "https://www.instagram.com/reel/Dakjuddxy0A/embed",
+    instagramUrl: "https://www.instagram.com/reel/Dakjuddxy0A/",
+    hasVideo: true,
+    videoTitle: "Tour Suíte Cajueiro - Vista direta pro mar",
     images: [
       "assets/images/vila_matury_5.jpg",
       "assets/images/vila_matury_6.jpg",
@@ -45,13 +53,14 @@ const VILA_ROOMS = [
     ],
     amenities: [
       { name: "Cama Casal Confortável", icon: "bed" },
-      { name: "Deck Privativo no Jardim", icon: "leaf" },
-      { name: "Ar-Condicionado Split", icon: "snowflake" },
+      { name: "Vista Direta pro Mar & Varandinha", icon: "sun" },
+      { name: "Ducha Quente", icon: "bath" },
+      { name: "Ar-Condicionado Split Silencioso", icon: "snowflake" },
       { name: "Frigobar", icon: "wine" },
       { name: "Wi-Fi Rápido", icon: "wifi" },
-      { name: "Café Regional na Pousada", icon: "coffee" }
+      { name: "Café da Manhã Regional", icon: "coffee" }
     ],
-    badge: "Paz & Natureza"
+    badge: "Vista Mar 💕"
   },
   {
     id: "suite-familia-falesias",
@@ -62,6 +71,7 @@ const VILA_ROOMS = [
     maxGuests: 4,
     shortDescription: "Espaço generoso com ambientes integrados, varandão arejado e acomodação ideal para quem viaja com quem mais ama.",
     fullDescription: "Pensada para proporcionar momentos inesquecíveis em família na Praia da Redonda. Une amplitude e aconchego com camas confortáveis, mesas de apoio, varandão ventilado e banheiro familiar completo.",
+    hasVideo: false,
     images: [
       "assets/images/vila_matury_12.jpg",
       "assets/images/vila_matury_7.jpg",
@@ -87,6 +97,7 @@ const VILA_ROOMS = [
     maxGuests: 2,
     shortDescription: "Tudo o que você precisa para uma estada serena: aconchego, ar puro e a proximidade da praia com excelente custo-benefício.",
     fullDescription: "Uma opção charmosa e funcional da Vila Matury para quem quer explorar os encantos da Redonda e de Icapuí durante o dia e descansar com tranquilidade e frescor à noite.",
+    hasVideo: false,
     images: [
       "assets/images/vila_matury_2.jpg",
       "assets/images/vila_matury_10.jpg",
