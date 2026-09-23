@@ -157,18 +157,18 @@ class AmbientAudio {
   }
 
   updateUI(playing) {
-    // Widget flutuante
+    if (this.btn) {
+      this.btn.classList.toggle('playing', playing);
+      this.btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      this.btn.setAttribute('title', playing ? 'Pausar música ambiente' : 'Tocar música ambiente');
+    }
+
     if (this.widget) {
       this.widget.classList.toggle('playing', playing);
     }
 
-    if (this.btn) {
-      this.btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-      this.btn.setAttribute('title', playing ? 'Pausar som do mar' : 'Ouvir as ondas da Praia da Redonda');
-    }
-
     if (this.label) {
-      this.label.textContent = playing ? 'Ouvindo o Mar' : 'Som do Mar';
+      this.label.textContent = playing ? 'Ouvindo Música' : 'Música Ambiente';
     }
 
     // Toggle no Menu Lateral (Side Drawer)

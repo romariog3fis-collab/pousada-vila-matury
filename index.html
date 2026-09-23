@@ -831,23 +831,17 @@
   </div>
 
   <!-- ==========================================
-       14. SOM DO MAR AMBIENTE (FLUTUANTE)
+       14. SOM AMBIENTE FLUTUANTE CIRCULAR
        ========================================== -->
-  <div class="ocean-sound-widget" id="oceanSoundWidget" role="region" aria-label="Som ambiente das ondas do mar">
-    <div class="ocean-sound-tooltip" id="oceanTooltip">
-      <span>🌊 Toque para ouvir o mar da Redonda</span>
-      <button class="ocean-tooltip-close" aria-label="Fechar dica">✕</button>
+  <button class="floating-audio-btn" id="oceanSoundBtn" aria-label="Música ambiente da Pousada Vila Matury" title="Música Ambiente • Tocar / Pausar" aria-pressed="false">
+    <div class="audio-pulse"></div>
+    <div class="audio-waves" aria-hidden="true">
+      <span class="wave-bar bar-1"></span>
+      <span class="wave-bar bar-2"></span>
+      <span class="wave-bar bar-3"></span>
+      <span class="wave-bar bar-4"></span>
     </div>
-    <button class="ocean-sound-btn" id="oceanSoundBtn" aria-label="Ativar som do mar da Praia da Redonda" title="Ouvir as ondas da Praia da Redonda" aria-pressed="false">
-      <span class="ocean-sound-waves" aria-hidden="true">
-        <span class="wave-bar bar-1"></span>
-        <span class="wave-bar bar-2"></span>
-        <span class="wave-bar bar-3"></span>
-        <span class="wave-bar bar-4"></span>
-      </span>
-      <span class="ocean-sound-label" id="oceanSoundLabel">Som do Mar</span>
-    </button>
-  </div>
+  </button>
 
   <audio id="oceanAudio" preload="none" loop>
     <source src="assets/audio/ocean-waves.mp3" type="audio/mpeg" />
